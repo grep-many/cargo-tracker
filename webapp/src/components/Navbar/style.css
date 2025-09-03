@@ -1,0 +1,125 @@
+/* Navbar base */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(8, 8, 184),
+    rgb(34, 34, 194),
+    rgb(69, 165, 255)
+  );
+  padding: 1rem 1.5rem;
+  position: relative;
+}
+
+.navbar .logo {
+  font-family: "Outfit", sans-serif;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-container input,
+.navbar select {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  background-color: #0241318c;
+  color: white;
+}
+
+/* ----- Hamburger Menu ----- */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ----- Mobile Layout ----- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-items {
+    position: fixed;
+    bottom: -100%; /* start hidden below screen */
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(8, 8, 184),
+      rgb(34, 34, 194),
+      rgb(69, 165, 255)
+    );
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    transition: bottom 0.4s ease-in-out; /* smooth slide up */
+  }
+
+  /* Toggle menu when checkbox is checked */
+  .menu-toggle:checked ~ .nav-items {
+    bottom: 0; /* slide up into view */
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .search-container input {
+    width: 100%;
+  }
+
+  .navbar select {
+    width: 100%;
+  }
+}
+
+/* Floating Action Button */
+.new-shipment-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+}
+.new-shipment-btn img {
+  width: 28px;
+  height: 28px;
+}

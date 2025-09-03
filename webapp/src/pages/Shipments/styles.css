@@ -1,0 +1,102 @@
+/* ---------- Table Container ---------- */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: rgb(240, 240, 240);
+  border-radius: 1rem; /* overall container rounded */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- Headings ---------- */
+h1 {
+  font-size: 1.875rem; /* 3xl */
+  font-weight: 700;
+  color: #111827; /* gray-900 */
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- Table Wrapper ---------- */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+/* ---------- Table ---------- */
+table {
+  width: 100%;
+  border-collapse: separate; /* allow rounded rows */
+  border-spacing: 0 0.5rem; /* spacing between rows */
+}
+
+/* ---------- Table Header Row ---------- */
+thead tr {
+  background-color: #1e40af; /* blue header */
+  color: #ffffff;
+  border-radius: 1rem; /* rounded header row */
+}
+
+thead th {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  text-align: left;
+  border-radius: 1rem; /* ensure header cells are rounded */
+}
+
+/* ---------- Table Body Rows ---------- */
+tbody tr {
+  background-color: #ffffff;
+  border-radius: 0.75rem; /* rounded each row */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s;
+  overflow: hidden; /* to keep row corners rounded */
+  cursor: pointer;
+}
+
+/* Alternate row colors */
+tbody tr.row-odd {
+  background-color: #f3f4f6; /* light gray */
+}
+
+/* ---------- Table Cells ---------- */
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: none;
+  color: #374151;
+  border-radius: 0.75rem; /* rounded for each cell */
+}
+
+/* ---------- Status Colors ---------- */
+td.status-pending { color: #f59e0b; }
+td.status-in-transit { color: #3b82f6; }
+td.status-delivered { color: #10b981; }
+td.status-delayed { color: #ef4444; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none; /* hide header on small screens */
+  }
+
+  tbody tr {
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #374151;
+  }
+}
