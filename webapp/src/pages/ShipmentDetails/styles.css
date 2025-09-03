@@ -1,0 +1,78 @@
+/* Card container */
+.card-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Card Layout */
+.card-content {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Map on left (wide screen) */
+.map-card {
+  flex: 1.5;
+  min-height: 400px;
+}
+
+/* Details on right */
+.details-card {
+  flex: 1;
+  padding: 20px;
+  border-left: 1px solid #ddd;
+}
+
+.details-card h2 {
+  margin-bottom: 15px;
+}
+
+.details-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.details-card li {
+  margin-bottom: 12px;
+}
+
+/* Dropdown for current location */
+.dropdown {
+  margin-left: 10px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive layout: stack map and details */
+@media (max-width: 960px) {
+  .card-content {
+    flex-direction: column;
+  }
+
+  .map-card {
+    order: 1;
+    min-height: 250px;
+  }
+
+  .details-card {
+    order: 2;
+    border-left: none;
+    border-top: 1px solid #ddd;
+  }
+}

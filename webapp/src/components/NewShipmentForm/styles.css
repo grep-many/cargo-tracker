@@ -1,0 +1,129 @@
+/* ================================
+   Modal Overlay
+================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* ================================
+   Modal Box
+================================ */
+.modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: max-content;
+  max-width: 90%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal h2 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+/* ================================
+   Shipment Form Styling
+================================ */
+.shipment-form {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr; /* default: single column */
+}
+
+.shipment-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.shipment-form input,
+.shipment-form select {
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.shipment-form input:focus,
+.shipment-form select:focus {
+  border-color: #4a90e2;
+}
+
+/* ================================
+   Buttons
+================================ */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn.primary {
+  background: #4a90e2;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #357ab8;
+}
+
+.btn.secondary {
+  background: #ddd;
+  color: black;
+}
+
+.btn.secondary:hover {
+  background: #bbb;
+}
+
+/* ================================
+   Responsive Layout
+================================ */
+
+/* On wider screens → two compartments */
+@media (min-width: 768px) {
+  .shipment-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Make buttons span across both columns */
+  .modal-actions {
+    grid-column: span 2;
+  }
+}
+
+/* ================================
+   Animations
+================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
